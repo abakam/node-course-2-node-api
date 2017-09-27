@@ -1,15 +1,4 @@
-var env = process.env.NODE_ENV || 'development';
-console.log('env ***** ', env);
-
-if(env === 'development'){
-    process.env.MONGODB_URI = 'mongodb://127.0.0.1/TodoApp';
-    process.env.PORT = 3000;
-}
-else if(env === 'test'){
-    process.env.MONGODB_URI = 'mongodb://127.0.0.1/TodoAppTest';
-    process.env.PORT = 3000;
-}
-
+require('./config/config');
 var {mongoose} = require('./db/mongoose.js');
 var {Todo} = require('./models/todo.js');
 var {User} = require('./models/user.js');
